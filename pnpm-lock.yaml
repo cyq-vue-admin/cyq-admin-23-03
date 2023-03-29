@@ -7,6 +7,7 @@ importers:
 
   projects/client-vue3-eleplus:
     specifiers:
+      '@types/node': ^18.15.11
       '@vitejs/plugin-vue': ^4.1.0
       axios: ^1.3.4
       element-plus: ^2.3.1
@@ -27,11 +28,12 @@ importers:
       vue: 3.2.47
       vue-router: 4.1.6_vue@3.2.47
     devDependencies:
+      '@types/node': 18.15.11
       '@vitejs/plugin-vue': 4.1.0_vite@4.2.1+vue@3.2.47
       typescript: 4.9.5
       unplugin-auto-import: 0.15.2
       unplugin-vue-components: 0.24.1_vue@3.2.47
-      vite: 4.2.1
+      vite: 4.2.1_@types+node@18.15.11
       vue-tsc: 1.2.0_typescript@4.9.5
 
 packages:
@@ -341,6 +343,10 @@ packages:
     resolution: {integrity: sha512-km+Vyn3BYm5ytMO13k9KTp27O75rbQ0NFw+U//g+PX7VZyjCioXaRFisqSIJRECljcTv73G3i6BpglNGHgUQ5A==}
     dev: false
 
+  /@types/node/18.15.11:
+    resolution: {integrity: sha512-E5Kwq2n4SbMzQOn6wnmBjuK9ouqlURrcZDVfbo9ftDDTFt3nk7ZKK4GMOzoYgnpQJKcxwQw+lGaBvvlMo0qN/Q==}
+    dev: true
+
   /@types/web-bluetooth/0.0.16:
     resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
     dev: false
@@ -352,7 +358,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.2.1
+      vite: 4.2.1_@types+node@18.15.11
       vue: 3.2.47
     dev: true
 
@@ -1114,7 +1120,7 @@ packages:
       webpack-virtual-modules: 0.5.0
     dev: true
 
-  /vite/4.2.1:
+  /vite/4.2.1_@types+node@18.15.11:
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1139,6 +1145,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.15.11
       esbuild: 0.17.14
       postcss: 8.4.21
       resolve: 1.22.1
