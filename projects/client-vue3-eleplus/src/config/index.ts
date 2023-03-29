@@ -28,5 +28,6 @@ const envConfigItem: envConfigItemI =
 export default {
   env,
   mock: true,
+  namespace: "cyq-admin-23-03",
   ...envConfigItem,
 };

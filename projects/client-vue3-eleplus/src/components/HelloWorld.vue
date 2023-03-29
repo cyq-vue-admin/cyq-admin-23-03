@@ -3,10 +3,14 @@
 </template>
 
 <script setup lang="ts">
-import axios from "axios";
-import config from "@/config";
 import { login } from "@/api";
-
+import storage from "@/utils/storage";
+onMounted(() => {
+  storage.setItem("age", 23);
+  console.log(storage.getItem("age"));
+  storage.removeItem("age");
+  storage.clear()
+});
 login().then((res) => {
   console.log(res);
 });
