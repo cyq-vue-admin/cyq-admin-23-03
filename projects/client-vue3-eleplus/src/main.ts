@@ -1,5 +1,7 @@
+import '@/assets/styles/reStyle.css';
 import { createPinia } from 'pinia';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+import 'uno.css';
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
