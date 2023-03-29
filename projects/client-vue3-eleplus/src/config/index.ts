@@ -27,6 +27,6 @@ const envConfigItem: envConfigItemI =
   envConfig[env as "development" | "prod" | "test"];
 export default {
   env,
-  mock: false,
+  mock: true,
   ...envConfigItem,
 };

@@ -5,7 +5,9 @@
 <script setup lang="ts">
 import axios from "axios";
 import config from "@/config";
-axios.get(config.mockUrl + "/user/login").then((res) => {
+import { login } from "@/api";
+
+login().then((res) => {
   console.log(res);
 });
 </script>
