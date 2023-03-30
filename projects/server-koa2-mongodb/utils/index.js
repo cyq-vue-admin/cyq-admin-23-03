@@ -8,6 +8,7 @@ const CODE = {
 };
 
 module.exports = {
+  CODE: CODE,
   pager(pageNum = 0, pageSize = 10) {
     pageNum *= 1;
     pageSize *= 1;
