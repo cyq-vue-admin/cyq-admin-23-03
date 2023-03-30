@@ -9,9 +9,7 @@ const log4js = require("./utils/log4j");
 
 const index = require('./routes/index')
 const users = require('./routes/users')
-log4js.debug("111");
-log4js.error("222");
-log4js.info("333");
+
 // error handler
 onerror(app)
 
