@@ -1,10 +1,16 @@
 import request from "./request";
 import type { ResType } from "./request";
-export const login = (): Promise<ResType<any>> => {
+
+export interface loginFormI {
+  userName: string;
+  password: string;
+}
+export const login = (loginForm: loginFormI): Promise<ResType<any>> => {
   // return request.get("/user/login");
 
   return request({
     url: "/user/login",
-    method: "get",
+    method: "post",
+    data: loginForm,
   });
 };

@@ -39,13 +39,13 @@
 </template>
 
 <script setup lang="ts">
+import * as API from "@/api";
+import { loginFormI } from "@/api";
 import type { FormInstance, FormRules } from "element-plus";
-
-interface loginFormI {
-  userName: string;
-  password: string;
-}
-
+import { useRouter } from "vue-router";
+import { useAppStore } from "@/store";
+const router = useRouter();
+const appStore = useAppStore();
 const loginFormRef = ref<FormInstance>();
 
 const loginForm = reactive<loginFormI>({
@@ -62,9 +62,12 @@ const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   formEl.validate((valid) => {
     if (valid) {
-      console.log("submit!");
+      API.login(loginForm).then((res) => {
+        console.log(res);
+        appStore.saveUserInffo(res.data.data);
+        router.push("/welcome");
+      });
     } else {
-      console.log("error submit!");
       return false;
     }
   });
