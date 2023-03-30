@@ -1,5 +1,5 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "@/components/Home.vue";
+import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -18,6 +18,11 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import("@/components/HelloWorld2.vue"),
       },
     ],
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("@/views/Login.vue"),
   },
 ];
 

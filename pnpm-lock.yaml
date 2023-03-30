@@ -7,6 +7,7 @@ importers:
 
   projects/client-vue3-eleplus:
     specifiers:
+      '@iconify-json/ic': ^1.1.13
       '@types/node': ^18.15.11
       '@vitejs/plugin-vue': ^4.1.0
       axios: ^1.3.4
@@ -29,6 +30,7 @@ importers:
       vue: 3.2.47
       vue-router: 4.1.6_vue@3.2.47
     devDependencies:
+      '@iconify-json/ic': 1.1.13
       '@types/node': 18.15.11
       '@vitejs/plugin-vue': 4.1.0_vite@4.2.1+vue@3.2.47
       typescript: 4.9.5
@@ -337,6 +339,12 @@ packages:
     dependencies:
       '@floating-ui/core': 1.2.5
     dev: false
+
+  /@iconify-json/ic/1.1.13:
+    resolution: {integrity: sha512-5i5zal/VRwTrs99iMTnG1Zu97bgX9Mkiu9TzR1U1rHBylUnBW+HkOweoQVEPgQITGG024/lNbZxU+3Aa2xuDww==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: true
 
   /@iconify/types/2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
