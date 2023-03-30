@@ -1,4 +1,5 @@
 import '@/assets/styles/reStyle.css';
+import 'element-plus/dist/index.css';
 import { createPinia } from 'pinia';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 import 'uno.css';

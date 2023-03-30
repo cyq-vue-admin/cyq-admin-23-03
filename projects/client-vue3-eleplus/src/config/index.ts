@@ -1,4 +1,4 @@
-const env: string = import.meta.env.MODE;
+const env: string = import.meta.env.MODE || 'pord';
 
 interface envConfigItemI {
   baseUrl: string;
@@ -11,7 +11,7 @@ interface envConfigI {
 }
 const envConfig: envConfigI = {
   development: {
-    baseUrl: "http://localhost:8080",
+    baseUrl: "/api",
     mockUrl: "https://mock.apifox.cn/m1/2513163-0-default",
   },
   prod: {
@@ -27,7 +27,7 @@ const envConfigItem: envConfigItemI =
   envConfig[env as "development" | "prod" | "test"];
 export default {
   env,
-  mock: true,
+  mock: false,
   namespace: "cyq-admin-23-03",
   ...envConfigItem,
 };

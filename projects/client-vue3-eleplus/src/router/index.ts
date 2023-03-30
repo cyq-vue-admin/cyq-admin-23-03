@@ -4,13 +4,13 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
-    redirect: "/helloWorld",
+    redirect: "/welcome",
     component: Home,
     children: [
       {
-        path: "/helloWorld",
-        name: "HelloWorld",
-        component: () => import("@/components/HelloWorld.vue"),
+        path: "/welcome",
+        name: "Welcome",
+        component: () => import("@/components/Welcome.vue"),
       },
       {
         path: "/helloWorld2",

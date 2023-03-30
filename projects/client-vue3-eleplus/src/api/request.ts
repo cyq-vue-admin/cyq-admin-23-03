@@ -22,7 +22,7 @@ const instance: AxiosInstance = axios.create({
 });
 
 // 请求拦截
-axios.interceptors.request.use((config) => {
+instance.interceptors.request.use((config) => {
   const headers = config.headers;
   if (!headers.Authorization) {
     headers.Authorization = "Bearer " + localStorage.getItem("token"); //jwt
@@ -30,16 +30,20 @@ axios.interceptors.request.use((config) => {
   return config;
 });
 // 响应拦截
-axios.interceptors.response.use((response) => {
-  console.log(response);
+instance.interceptors.response.use((response) => {
   const { code, message } = response.data;
   if (code === 200) {
-    console.log(123);
-    return response.data;
+    response.data;
+  }
+  // 账号密码错误
+  else if (code === 20001) {
+    ElMessage.error(message);
+    return Promise.reject(message);
   } else {
     ElMessage.error(message || NECTWORK_ERROR);
     return Promise.reject(message || NECTWORK_ERROR);
   }
+  return response;
 });
 
 function request<T>(options: optionsI): Promise<ResType<T>> {

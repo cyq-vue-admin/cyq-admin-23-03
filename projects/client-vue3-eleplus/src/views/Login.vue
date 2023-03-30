@@ -62,11 +62,15 @@ const submitForm = (formEl: FormInstance | undefined) => {
   if (!formEl) return;
   formEl.validate((valid) => {
     if (valid) {
-      API.login(loginForm).then((res) => {
-        console.log(res);
-        appStore.saveUserInffo(res.data.data);
-        router.push("/welcome");
-      });
+      API.login(loginForm)
+        .then((res) => {
+          console.log(res);
+          appStore.saveUserInffo(res.data.data);
+          router.push("/welcome");
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     } else {
       return false;
     }
