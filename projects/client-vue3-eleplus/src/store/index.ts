@@ -5,6 +5,7 @@ export const useAppStore = defineStore("app", {
     return {
       count: 0,
       userInfo: storage.getItem("userInfo") || {},
+      collapse: false,
     };
   },
   // persist: true, // 持久化
@@ -12,9 +13,15 @@ export const useAppStore = defineStore("app", {
     addCount() {
       this.count++;
     },
-    async saveUserInffo(userInfo: any) {
+    async saveUserInfo(userInfo: any) {
       this.userInfo = userInfo;
       storage.setItem("userInfo", userInfo);
+    },
+    logout() {
+      this.saveUserInfo("");
+    },
+    toggleCollapse() {
+      this.collapse = !this.collapse;
     },
   },
 });

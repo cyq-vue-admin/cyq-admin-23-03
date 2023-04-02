@@ -1,22 +1,37 @@
 <template>
   <div h-screen w-screen flex bg-gray-200>
-    <div w-50 bg-white>1</div>
-    <div style="width: calc(100vw - 12.5rem)">
-      <div h-12 bg-white>2</div>
+    <div
+      :class="appStore.collapse ? ['w-16'] : ['w-50']"
+      bg-white
+      transition-width
+      duration-500
+      ease-in-out
+    >
+      <Side></Side>
+    </div>
+    <div
+      :style="{
+        width: appStore.collapse
+          ? `calc(100vw - 4rem)`
+          : `calc(100vw - 12.5rem)`,
+      }"
+      transition-width
+      duration-500
+      ease-in-out
+    >
+      <div h-12 bg-gray-100>
+        <Header></Header>
+      </div>
       <div p-4 box-border style="height: calc(100vh - 3rem)">
         <router-view></router-view>
       </div>
     </div>
-    <!-- <el-container>
-      <el-aside h-screen bg-blue-600 width="200px">Aside</el-aside>
-      <el-container>
-        <el-header bg-red-500>Header</el-header>
-        <el-main bg-blue-100> </el-main>
-      </el-container>
-    </el-container> -->
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useAppStore } from "@/store";
+const appStore = useAppStore();
+</script>
 
 <style scoped></style>

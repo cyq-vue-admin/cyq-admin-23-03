@@ -65,7 +65,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
       API.login(loginForm)
         .then((res) => {
           console.log(res);
-          appStore.saveUserInffo(res.data.data);
+          appStore.saveUserInfo(res.data.data);
           router.push("/welcome");
         })
         .catch((err) => {
